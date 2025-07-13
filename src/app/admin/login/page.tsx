@@ -28,10 +28,11 @@ export default function AdminLoginPage() {
       setError("Invalid credentials. Use admin@demo.com / admin123")
     }
   }
-console.log(isAuthenticated);
 
   useEffect(() => {
-    isAuthenticated ? router.push("/admin/dashboard") : null
+    if (isAuthenticated) {
+      router.push("/admin/dashboard")
+    }
   }, [])
 
   return (

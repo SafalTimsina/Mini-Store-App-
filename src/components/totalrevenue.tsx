@@ -2,7 +2,7 @@
 'use client'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useOrderStore } from "@/stores/useOrderStore"
-import { DollarSign, ShoppingCart } from "lucide-react"
+import { DollarSign } from "lucide-react"
 
 const TotalRevenue=()=>{
   const {  getTotalRevenue } = useOrderStore()

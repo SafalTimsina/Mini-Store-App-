@@ -1,14 +1,9 @@
 'use client'
-import { getOrders } from "@/lib/api"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { useOrderStore } from "@/stores/useOrderStore"
-import { log } from "console"
 
 export default function AdminOrdersList() {
-  
 const {  order } = useOrderStore()
-console.log();
 
   return (
     <div className="p-4">

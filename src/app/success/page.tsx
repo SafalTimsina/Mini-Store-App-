@@ -14,7 +14,7 @@ export default function SuccessPage() {
           </CardHeader>
           <CardContent className="text-center space-y-4 p-6">
             <p className="text-muted-foreground">
-              Thank you for your order. We'll process it shortly and send you a confirmation email.
+              Thank you for your order. We&apos;ll process it shortly and send you a confirmation email.
             </p>
             <div className="w-24 h-px bg-foreground mx-auto"></div>
             <div className="space-y-2">

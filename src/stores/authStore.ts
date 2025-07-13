@@ -1,6 +1,10 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { User } from '@/types';
+
+interface User{
+  email:string
+  isAdmin:boolean
+}
 
 interface AuthStore {
   user: User | null;
@@ -17,7 +21,6 @@ export const useAuthStore = create<AuthStore>()(
       isAuthenticated: false,
 
       login: async (email: string, password: string) => {
-        // Hardcoded admin login for demo
         if (email === 'admin@demo.com' && password === 'admin123') {
           const user: User = {
             email,

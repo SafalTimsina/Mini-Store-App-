@@ -2,20 +2,17 @@
 
 import type React from "react"
 
-import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useCartStore } from "@/stores/store"
-import { createOrder } from "@/lib/api"
-import { useRouter } from "next/navigation"
 import { toast } from "@/components/ui/sonner"
+import { useCartStore } from "@/stores/store"
 import { useOrderStore } from "@/stores/useOrderStore"
-import { title } from "process"
+import { Minus, Plus, ShoppingBag, Trash2 } from "lucide-react"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
+import { useState } from "react"
 
 
 export default function CartPage() {

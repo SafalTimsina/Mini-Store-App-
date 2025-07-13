@@ -1,5 +1,4 @@
-import { useOrderStore } from "@/stores/useOrderStore"
-import type { Product, OrderRequest, Order, ProductDetail } from "../types" // Assuming these types are declared in a separate file
+import type { Order, OrderRequest, Product } from "../types"; // Assuming these types are declared in a separate file
 
 export const API_BASE = "https://api.freeapi.app/api/v1"
 

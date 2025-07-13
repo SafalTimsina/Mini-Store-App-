@@ -1,18 +1,15 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Star } from "lucide-react"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import type { Product } from "@/types"
+import { Star } from "lucide-react"
+import Link from "next/link"
 
 interface ProductCardProps {
   product: Product
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const image=product.images
-  console.log(product.thumbnail);
   
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow">

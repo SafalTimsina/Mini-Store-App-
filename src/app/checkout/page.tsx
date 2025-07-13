@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import { CheckCircle, Package, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import Link from 'next/link';
 
 export default function CheckoutSuccessPage() {
   return (
@@ -27,7 +27,7 @@ export default function CheckoutSuccessPage() {
                 <div>
                   <h3 className="font-semibold mb-2">Order Confirmation</h3>
                   <p className="text-sm text-muted-foreground">
-                    You'll receive an email confirmation shortly with your order details.
+                    You&apos;ll receive an email confirmation shortly with your order details.
                   </p>
                 </div>
                 <div>
@@ -39,7 +39,7 @@ export default function CheckoutSuccessPage() {
                 <div>
                   <h3 className="font-semibold mb-2">Shipping</h3>
                   <p className="text-sm text-muted-foreground">
-                    Once shipped, you'll receive tracking information to monitor your delivery.
+                    Once shipped, you&apos;ll receive tracking information to monitor your delivery.
                   </p>
                 </div>
               </div>
@@ -55,7 +55,7 @@ export default function CheckoutSuccessPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="gradient" size="lg" asChild>
-              <Link to="/">
+              <Link href="/">
                 <Home className="h-4 w-4 mr-2" />
                 Continue Shopping
               </Link>
