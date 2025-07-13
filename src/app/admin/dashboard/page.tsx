@@ -1,10 +1,12 @@
 import AverageRevenue from "@/components/averagerevenue"
 import RecentOders from "@/components/recentorder"
 import TotalOrder from "@/components/totalorder"
+import TotalProduct from "@/components/totalproduct"
 import TotalRevenue from "@/components/totalrevenue"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { getProducts } from "@/lib/api"
 import { Package } from "lucide-react"
+import Link from "next/link"
 
 export default async function AdminDashboard() {
   const [products] = await Promise.all([getProducts()])
@@ -14,7 +16,9 @@ export default async function AdminDashboard() {
       <h1 className="text-3xl font-bold mb-8">Dashboard</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        {/* <TotalProduct /> */}  <Card>
+        {/* <TotalProduct />   */}
+        <Link href={"/admin/products"}>
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Products</CardTitle>
             <Package className="h-4 w-4 text-muted-foreground" />
@@ -23,6 +27,8 @@ export default async function AdminDashboard() {
             <div className="text-2xl font-bold">{products?.length}</div>
           </CardContent>
         </Card>
+        </Link>
+        
 
         <TotalOrder />
 

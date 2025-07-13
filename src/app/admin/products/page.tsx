@@ -11,15 +11,15 @@ export default async function AdminProductsPage() {
     <div>
       <h1 className="text-3xl font-bold mb-8">Products</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {products.map((product) => (
           <Card key={product.id}>
             <CardHeader className="pb-4">
               <div className="aspect-square relative overflow-hidden rounded-md mb-4">
-                <Image
+                <img
                   src={product.thumbnail || "/placeholder.svg?height=200&width=200"}
                   alt={product.title}
-                  fill
+                  // fill
                   className="object-cover"
                 />
               </div>
