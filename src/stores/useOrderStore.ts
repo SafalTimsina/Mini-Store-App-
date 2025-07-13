@@ -7,6 +7,7 @@ interface OrderRequest {
         productId: string
         quantity: number
         price: number
+        title: string
         
     }[]
     customer: {

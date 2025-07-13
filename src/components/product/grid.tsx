@@ -1,10 +1,11 @@
+'use client'
 import { useState, useEffect } from 'react';
 import { ProductCard } from './card';
 import { Product } from '@/types';
-import { apiService } from '@/lib/api';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { AlertCircle } from 'lucide-react';
+import { getProducts } from '@/lib/api';
 
 export function ProductGrid() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -16,59 +17,14 @@ export function ProductGrid() {
       try {
         setLoading(true);
         setError(null);
-        const response = await apiService.getProducts();
-        setProducts(response.data || []);
+        const response = await getProducts();
+        setProducts(response || []);
       } catch (err) {
         console.error('Error fetching products:', err);
         setError('Failed to load products. Please try again later.');
         // Fallback with mock data for demo
-        setProducts([
-          {
-            _id: '1',
-            name: 'Premium Wireless Headphones',
-            description: 'High-quality wireless headphones with noise cancellation and premium sound quality.',
-            price: 299.99,
-            image: '/placeholder.svg',
-            category: 'Electronics',
-            stock: 15,
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-          },
-          {
-            _id: '2',
-            name: 'Smart Fitness Watch',
-            description: 'Advanced fitness tracking with heart rate monitoring and GPS capabilities.',
-            price: 199.99,
-            image: '/placeholder.svg',
-            category: 'Wearables',
-            stock: 8,
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-          },
-          {
-            _id: '3',
-            name: 'Organic Cotton T-Shirt',
-            description: 'Comfortable organic cotton t-shirt available in multiple colors and sizes.',
-            price: 29.99,
-            image: '/placeholder.svg',
-            category: 'Clothing',
-            stock: 25,
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-          },
-          {
-            _id: '4',
-            name: 'Stainless Steel Water Bottle',
-            description: 'Eco-friendly stainless steel water bottle with temperature retention.',
-            price: 24.99,
-            image: '/placeholder.svg',
-            category: 'Accessories',
-            stock: 0,
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-          },
-        ]);
-      } finally {
+        
+         } finally {
         setLoading(false);
       }
     };
@@ -118,7 +74,7 @@ export function ProductGrid() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-fade-in">
       {products.map((product) => (
-        <ProductCard key={product._id} product={product} />
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );

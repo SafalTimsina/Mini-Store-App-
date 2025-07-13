@@ -16,8 +16,8 @@ export interface Product {
   images: string
   category: string
   stock: number
-  rating: number
-  brand: string
+  rating?: number
+  brand?: string
   thumbnail?:string
 }
 

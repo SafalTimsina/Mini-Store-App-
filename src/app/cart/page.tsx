@@ -15,6 +15,7 @@ import { createOrder } from "@/lib/api"
 import { useRouter } from "next/navigation"
 import { toast } from "@/components/ui/sonner"
 import { useOrderStore } from "@/stores/useOrderStore"
+import { title } from "process"
 
 
 export default function CartPage() {
@@ -48,21 +49,14 @@ export default function CartPage() {
 
     setIsLoading(true)
     try {
-      const orderData = {
-        customer: customerInfo,
-        items: items.map((item) => ({
-          productId: item.product.id,
-          quantity: item.quantity,
-          price: item.product.price,
-        })),
-        total: getTotalPrice(),
-      }
+      
 
       const order = createOrder({
         items: items.map((item) => ({
           productId: item.product.id,
           quantity: item.quantity,
           price: item.product.price,
+          title: item.product.title,
         })),
         customer: customerInfo,
           total: getTotalPrice(),
