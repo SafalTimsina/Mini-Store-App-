@@ -1,7 +1,6 @@
 import AverageRevenue from "@/components/averagerevenue"
 import RecentOders from "@/components/recentorder"
 import TotalOrder from "@/components/totalorder"
-import TotalProduct from "@/components/totalproduct"
 import TotalRevenue from "@/components/totalrevenue"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { getProducts } from "@/lib/api"

@@ -1,4 +1,4 @@
-import Image from "next/image"
+
 import { getProducts } from "@/lib/api"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
